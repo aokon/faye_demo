@@ -2,7 +2,7 @@ h1. Rails app with faye pub/sub service
 
 h2. Instalation
 
-* clone repo using @@
+* clone repo @git clone https://github.com/aokon/faye_demo.git@
 * go to app folder and run @bundle install@
 
 h2. Run app
