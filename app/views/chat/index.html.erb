@@ -1,0 +1,13 @@
+<div class="page-header">
+  <h1>Chat sample</h1>
+</div>
+
+<ul class="messages pull-left">
+  <% @messages.each do |message| %>
+    <li><%= message.content %></li>
+  <% end %>
+</ul>
+
+<div class="well pull-right">
+  <%= render partial: 'messages/form' %>
+</div>

@@ -1,0 +1,11 @@
+h1. Rails app with faye pub/sub service
+
+h2. Instalation
+
+* clone repo using @@
+* go to app folder and run @bundle install@
+
+h2. Run app
+
+* run db migration @rake db:migrate@
+* run web server and faye pub/sub server via foreman @foreman start@
