@@ -13,7 +13,7 @@ Logger = {
 }
 
 $ ->
-  fayeClient = new Faye.Client("http://localhost:9292/faye")
+  fayeClient = new Faye.Client("http://localhost:4000/faye")
   fayeClient.addExtension Logger
 
   subscription = fayeClient.subscribe "/messages/new", (data) ->
@@ -25,10 +25,14 @@ $ ->
   subscription.errback (error)->
     console.log error
 
-  $("#new_message").on "ajax:complete", (xhr, data) ->
-    message = JSON.parse(data.responseText)
-    publication = fayeClient.publish '/messages/new', message.content
+  $('#new_message .btn').on 'click', (event) ->
+    event.preventDefault()
+    content = $('#new_message #message_content').val()
+
+    publication = fayeClient.publish '/messages/new', content
     publication.callback -> console.log "message was received"
     publication.errback (error) -> console.log error
+
+
 
 

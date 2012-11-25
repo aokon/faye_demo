@@ -9,3 +9,4 @@ h2. Run app
 
 * run db migration @rake db:migrate@
 * run web server and faye pub/sub server via foreman @foreman start@
+* you can run manually rails app and faye server see Procfile 
